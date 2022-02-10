@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-backend-deployment
+  namespace: {{.Values.namespace}}
+  labels:
+    app: {{.Values.label}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{.Values.label}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.label}}
+    spec:
+      containers: 
+      - image: 529396670287.dkr.ecr.us-west-2.amazonaws.com/trogaev-ecr-backend:v1
+      #- image: localhost:32000/jenkins-dood:v4
+        #imagePullPolicy: Never
+        name: {{.Values.label}}
+        ports:
+        - containerPort: 80
