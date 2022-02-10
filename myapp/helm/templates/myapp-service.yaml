@@ -5,7 +5,7 @@ metadata:
   name: myapp-service
   namespace: {{.Values.namespace}}
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: {{.Values.label}}
   ports:
@@ -13,4 +13,4 @@ spec:
     - name: '8080'
       port: 80
       targetPort: 80
-      nodePort: 30003
+      #nodePort: 30003
