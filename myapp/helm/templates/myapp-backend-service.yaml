@@ -7,10 +7,10 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: {{.Values.label}}
+    app: {{.Values.labelbackend}}
   ports:
       # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
-    - name: '8080'
+    - name: '80'
       port: 80
       targetPort: 80
       #nodePort: 30003
