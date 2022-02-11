@@ -12,8 +12,14 @@ spec:
       containers:
       - name: {{.Values.labeljob}}
         image: 529396670287.dkr.ecr.us-west-2.amazonaws.com/trogaev-ecr-backend-dacpack:v1
-        args:
-        - /bin/sh
-        - -c
-        - date; echo Hello from the Kubernetes cluster
+        env:
+        - name: TargetServerName
+          value: db
+        - name: TargetDatabaseName
+          value: WeeklyReport
+        - name: TargetUser
+          value: sa
+        - name: TargetPassword
+          value: Password.
       restartPolicy: Never
+

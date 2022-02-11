@@ -1,3 +1,5 @@
 namespace: deploy
 label: myapp
 labelbackend: myapp-backend
+labelmssql: mssql2019
+labeljob: dacpacagent
