@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-dacpac-service
+  namespace: {{.Values.namespace}}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{.Values.labeljob}}
+  ports:
+      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+    - name: '1433'
+      port: 1433
+      targetPort: 1433
+      #nodePort: 30003

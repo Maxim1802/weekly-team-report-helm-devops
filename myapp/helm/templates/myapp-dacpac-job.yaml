@@ -11,15 +11,17 @@ spec:
     spec:
       containers:
       - name: {{.Values.labeljob}}
-        image: 529396670287.dkr.ecr.us-west-2.amazonaws.com/trogaev-ecr-backend-dacpack:v1
+        image: 529396670287.dkr.ecr.us-west-2.amazonaws.com/trogaev-ecr-backend-dacpack:v3
         env:
         - name: TargetServerName
-          value: db
+          value: myapp-mssql-service.deploy
         - name: TargetDatabaseName
           value: WeeklyReport
         - name: TargetUser
           value: sa
         - name: TargetPassword
           value: Password.
+        ports:
+        - containerPort: 1433
       restartPolicy: Never
 
