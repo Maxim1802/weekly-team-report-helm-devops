@@ -21,5 +21,8 @@ spec:
       #- image: localhost:32000/jenkins-dood:v4
         #imagePullPolicy: Never
         name: {{.Values.label}}
+        env:
+        - name: NODE_ENV
+          value: production
         ports:
         - containerPort: 80

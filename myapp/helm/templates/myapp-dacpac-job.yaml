@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: {{.Values.labeljob}}
-        image: 529396670287.dkr.ecr.us-west-2.amazonaws.com/trogaev-ecr-backend-dacpack:v3
+        image: 529396670287.dkr.ecr.us-west-2.amazonaws.com/trogaev-ecr-backend-dacpack:v1
         env:
         - name: TargetServerName
           value: myapp-mssql-service.deploy

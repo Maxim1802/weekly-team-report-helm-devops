@@ -17,12 +17,12 @@ spec:
         app: {{.Values.labelbackend}}
     spec:
       containers: 
-      - image: 529396670287.dkr.ecr.us-west-2.amazonaws.com/trogaev-ecr-backend:v3
+      - image: 529396670287.dkr.ecr.us-west-2.amazonaws.com/trogaev-ecr-backend:v1
       #- image: localhost:32000/jenkins-dood:v4
         #imagePullPolicy: Never
         name: {{.Values.labelbackend}}
         env:
         - name: ASPNETCORE_ENVIRONMENT 
-          value: Docker
+          value: K8s
         ports:
         - containerPort: 80

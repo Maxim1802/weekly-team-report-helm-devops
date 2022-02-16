@@ -10,7 +10,7 @@ spec:
     app: {{.Values.labelmssql}}
   ports:
       # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
-    - name: '80'
+    - name: '1433'
       port: 1433
       targetPort: 1433
       #nodePort: 30003

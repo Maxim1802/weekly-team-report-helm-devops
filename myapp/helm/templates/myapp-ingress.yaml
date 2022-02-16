@@ -3,12 +3,19 @@ kind: Ingress
 metadata:
   name: myapp-ingress-frontend
   namespace: {{.Values.namespace}}
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
   #annotations:
     #nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
+  tls:
+  - hosts:
+    - "54.70.231.23.nip.io"
+    secretName: tls-secret
+  ingressClassName: public
   rules:
-  - http:
+  - host: "54.70.231.23.nip.io"
+    http:
       paths:
       - path: /
         pathType: Prefix

@@ -20,7 +20,7 @@ spec:
         env:
           # Use secret in real usage
         - name: SA_PASSWORD
-          value: "Password."
+          value: Password.
         - name: ACCEPT_EULA
           value: "Y"
         ports:
